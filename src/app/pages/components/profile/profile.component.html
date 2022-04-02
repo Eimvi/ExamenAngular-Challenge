@@ -1,0 +1,76 @@
+<app-toolbar></app-toolbar>
+<div class="content usuario" >
+  <mat-card class="mat-elevation-z4">
+    <div class="image-card">
+      <mat-card-header >
+        <mat-card-title>Perfil de Usuario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="carta contenedor-avatar">
+          <div class="nombre-usuario">
+              {{profile.nombre}}
+          </div>
+          <button mat-raised-button color="primary" (click)="logout()">Cerrar Sesión</button>
+      </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>
+
+<div class="content" >
+  <mat-card class="mat-elevation-z4">
+    <div class="image-card user-data">
+      <mat-card-header>
+        <mat-card-title>Datos de Usuario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Nombre(s)</mat-label>
+          <input matInput disabled [(ngModel)]="profile.nombre">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Apellido Paterno</mat-label>
+          <input matInput disabled [(ngModel)]="profile.apellidoPaterno">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Apellido Materno</mat-label>
+          <input matInput disabled [(ngModel)]="profile.apellidoMaterno">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Fecha de Nacimiento</mat-label>
+          <input matInput disabled [(ngModel)]="profile.fechaNacimiento">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput disabled [(ngModel)]="profile.correoElectronico">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Teléfono</mat-label>
+          <input matInput disabled [(ngModel)]="profile.telefono">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Ciudad</mat-label>
+          <input matInput disabled [(ngModel)]="profile.ciudad">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Delegación</mat-label>
+          <input matInput disabled [(ngModel)]="profile.delegacion">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Fecha de Registro</mat-label>
+          <input matInput disabled [(ngModel)]="profile.fechaRegistro">
+        </mat-form-field>
+
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

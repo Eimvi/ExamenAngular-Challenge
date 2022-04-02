@@ -1,0 +1,38 @@
+.container {
+  padding-top: 50px;
+}
+
+mat-card {
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .name {
+    margin-top: 8px;
+    font-weight: normal;
+  }
+
+  .designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+  }
+
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+  mat-form-field {
+    display: block;
+    padding: 15px 30px;
+  }
+  .checkbox {
+    display: flex;
+    align-items: left;
+    margin-bottom: 20px;
+    margin-left: 30px;
+  }
+}
+

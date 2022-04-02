@@ -1,0 +1,21 @@
+mat-toolbar {
+  background-color: #A63EC5;
+  height: 10%;
+  button:hover{
+    background-color: #712B75;
+    transition: ease 1s all;
+  }
+
+  button.active {
+      background-color: #712B75;
+  }
+}
+
+span{
+  color: white;
+}
+
+mat-icon {
+  color: white;
+}
+

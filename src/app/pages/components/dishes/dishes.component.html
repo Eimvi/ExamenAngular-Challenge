@@ -1,0 +1,57 @@
+<app-toolbar></app-toolbar>
+<div class="principal">
+  <div class="titulo">
+    <h2>Platillos</h2>
+  </div>
+  <div class="filtros" fxLayout="row wrap">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Áreas</mat-label>
+      <mat-select [(ngModel)]="area" [ngModelOptions]="{standalone: true}" (selectionChange)="filterTable(1)">
+        <mat-option *ngFor="let area of dishesArea" [value]="area.strArea">{{area.strArea}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Categorías</mat-label>
+      <mat-select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" (selectionChange)="filterTable(2)">
+        <mat-option *ngFor="let category of dishesCategory" [value]="category.strCategory">{{category.strCategory}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Ingredientes</mat-label>
+      <mat-select [(ngModel)]="ingredients" [ngModelOptions]="{standalone: true}" (selectionChange)="filterTable(3)">
+        <mat-option *ngFor="let ingredients of dishesIngredients" [value]="ingredients.strIngredient">
+          {{ingredients.strIngredient}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="btn" mat-raised-button color="primary" (click)="cleanFilter()">Limpiar Filtro</button>
+  </div>
+
+  <div class="tabla">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="fila">ID</th>
+        <td mat-cell class="fila" *matCellDef="let element">{{element.idMeal}}</td>
+      </ng-container>
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef class="fila">Nombre</th>
+        <td mat-cell class="fila" *matCellDef="let element">{{element.strMeal}}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns; let element;" [routerLink] = "['/welcome/dish-detail', element.idMeal]"></tr>
+    </table>
+    <mat-paginator style="width: 100%;" #paginator [length]="sizeTable" [pageSize]="5" class="shadow"
+      [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutGap="10px" class="container" >
+    <mat-card fxFlex *ngFor="let ali of dishesRandoms" [routerLink] = "['/welcome/dish-detail', ali.idMeal]">
+      <mat-card-header fxLayout="row" fxLayoutAlign="center center">
+        <div mat-card-avatar class="image"></div>
+        <mat-card-title>{{ali.strMeal}}</mat-card-title>
+        <mat-card-subtitle>{{ ali.strCategory }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="ali.strMealThumb" alt="imagen alimento" height="180">
+    </mat-card>
+  </div>
+</div>

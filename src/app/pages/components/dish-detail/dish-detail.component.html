@@ -1,0 +1,53 @@
+<app-toolbar></app-toolbar>
+<div class="titulo">
+  <h2>Detalle del Platillo</h2>
+</div>
+<div class="content" >
+  <mat-card class="mat-elevation-z4">
+    <div class="image-card">
+      <mat-card-header>
+        <mat-card-title>{{ dataDishDetail.title }}</mat-card-title>
+      </mat-card-header>
+      <div class="img">
+        <img mat-card-image [src]="dataDishDetail.image">
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header>
+      <mat-card-title>Ingredientes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <ul *ngFor="let item of dataDishDetail.instructionsOne">
+          <li *ngIf="item.measure != ' '"> {{item.measure}} {{item.ingredient}} </li>
+        </ul>
+      </div>
+      <div>
+        <ul *ngFor="let item of dataDishDetail.instructionsTwo">
+          <li *ngIf="item.measure != ' '"> {{item.measure}} {{item.ingredient}} </li>
+        </ul>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header>
+      <mat-card-title>Instrucciones</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{dataDishDetail.instructions}}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header>
+      <mat-card-title>Video</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="video">
+      <iframe width="420" height="350" [src]="dataDishDetail.urlVideo | sanitizeUrl"></iframe>
+    </mat-card-content>
+  </mat-card>
+</div>
+

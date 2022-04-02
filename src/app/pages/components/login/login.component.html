@@ -1,0 +1,33 @@
+<div class="container">
+  <div>
+    <mat-card >
+      <mat-card-content >
+        <div class="card-top">
+          <h2>Inicio de Sesión</h2>
+          <img class="avatar mat-elevation-z8" src="../../../../assets/images/profile.jpg" />
+
+          <h4 class="name">Desarrollador Full Stack</h4>
+          <p class="designation">TBN MEXICO</p>
+        </div>
+
+        <mat-divider></mat-divider>
+        <form [formGroup]="formLogin" (submit)="login()">
+          <mat-form-field>
+            <input matInput formControlName="user" placeholder="Usuario" name="username" required>
+
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [type]="showPassword ? 'password' : 'text'" autocomplete="off" maxlength="5" formControlName="password" placeholder="Contraseña" name="password" required>
+            <button mat-icon-button type="button" matSuffix class="button-hide" (click)="showPassword = !showPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="showPassword">
+              <mat-icon>{{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+           </button>
+          </mat-form-field>
+          <section>
+            <mat-checkbox formControlName="rememberPassword" class="checkbox">Recordar credenciales.</mat-checkbox>
+          </section>
+          <button mat-raised-button color="primary" type="submit" [disabled]="formLogin.invalid">Iniciar Sesión</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<app-toolbar></app-toolbar>
+<div class="titulo">
+  <h2>¡Bienvenido!</h2>
+</div>
+<div class="content" >
+
+  <mat-card  class="mat-elevation-z4" [routerLink] = "['/welcome/dish-detail', randomDish.id]">
+    <mat-card-header>
+      <mat-card-title>¡Platillo del día!</mat-card-title>
+      <mat-card-subtitle>{{ randomDish.title }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="img">
+      <img mat-card-image [src]="randomDish.srcImage" >
+    </div>
+  </mat-card>
+</div>

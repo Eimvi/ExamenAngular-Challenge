@@ -1,0 +1,46 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+  <span>
+    Challenge Angular
+  </span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button routerLink="/welcome/home" routerLinkActive="active">
+      <mat-icon>home</mat-icon>
+      <span>Inicio (Bienvenida)</span>
+    </button>
+    <button mat-button routerLink="/welcome/ingredients"routerLinkActive="active">
+      <mat-icon>egg</mat-icon>
+      <span>Ingredientes Populares</span>
+    </button>
+    <button mat-button routerLink="/welcome/dishes" routerLinkActive="active">
+      <mat-icon>dinner_dining</mat-icon>
+      <span>Platillos</span>
+    </button>
+    <button mat-button routerLink="/welcome/profile" routerLinkActive="active">
+      <mat-icon>account_circle</mat-icon>
+      <span>Perfil de Usuario</span>
+    </button>
+  </div>
+  <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+  <button mat-menu-item routerLink="/welcome/home">
+    <mat-icon>home</mat-icon>
+    <span>Inicio (Bienvenida)</span>
+  </button>
+  <button mat-menu-item routerLink="/welcome/ingredients">
+    <mat-icon>egg</mat-icon>
+    <span>Ingredientes Populares</span>
+  </button>
+  <button mat-menu-item routerLink="/welcome/dishes">
+    <mat-icon>dinner_dining</mat-icon>
+    <span>Platillos</span>
+  </button>
+  <button mat-menu-item routerLink="/welcome/profile">
+    <mat-icon>account_circle</mat-icon>
+    <span>Perfil de Usuario</span>
+  </button>
+</mat-menu>
+
+<router-outlet></router-outlet>

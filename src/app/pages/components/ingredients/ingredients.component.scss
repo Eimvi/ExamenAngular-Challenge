@@ -1,0 +1,17 @@
+.titulo {
+  margin-top: 5%;
+  width: 100%;
+  text-align: center;
+  h2 {
+      font-size: 2em;
+      font-weight: 600;
+      letter-spacing: 2px;
+  }
+}
+
+.tabla{
+  margin: 20px;
+  tr{
+    cursor: pointer;
+  }
+}

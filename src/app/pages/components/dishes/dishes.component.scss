@@ -1,0 +1,51 @@
+.principal {
+  .titulo {
+    margin-top: 35px;
+    width: 100%;
+    text-align: center;
+    h2 {
+        font-size: 2em;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+  }
+
+  .filtros {
+    position: relative;
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form-field {
+        margin-right: 2%;
+    }
+    button {
+        display: relative;
+        border: transparent;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        transform: translateY(-20%);
+    }
+  }
+  .container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 80px;
+    margin: 20px 60px;
+    .image {
+      background-size: cover;
+    }
+    mat-card{
+      cursor: pointer;
+    }
+  }
+
+  .tabla {
+    margin: 5px 20px 20px 20px;
+    tr{
+      cursor: pointer;
+    }
+  }
+}

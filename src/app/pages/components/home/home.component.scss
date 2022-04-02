@@ -1,0 +1,28 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mat-card {
+    cursor: pointer;
+    width: 500px;
+    mat-card-header {
+      padding: 20px;
+    }
+    .img {
+      margin: 30px;
+      border-radius: 10px 10px 10px 10px;
+    }
+  }
+}
+
+.titulo {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  h2 {
+      font-size: 2em;
+      font-weight: 600;
+      letter-spacing: 2px;
+  }
+}
+

@@ -1,0 +1,18 @@
+
+<app-toolbar></app-toolbar>
+<div class="principal">
+  <div class="titulo">
+    <h2>Platillos por ingrediente</h2>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="10px" class="container" >
+    <mat-card fxFlex *ngFor="let food of foods" [routerLink] = "['/welcome/dish-detail', food.idMeal]">
+      <mat-card-header fxLayout="row" fxLayoutAlign="center center">
+        <div mat-card-avatar class="image"></div>
+        <mat-card-title>{{food.strMeal}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="food.strMealThumb" alt="imagen alimento" height="180">
+    </mat-card>
+  </div>
+
+</div>
+
